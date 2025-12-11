@@ -131,24 +131,58 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <div style="height: 100vh; background-image: url(assets/img/hero.png); background-size: cover; background-position: center;" class="position-relative w-100">
-    <div class="position-absolute text-white d-flex flex-column align-items-start justify-content-center" style="top: 0; right: 0; bottom: 0; left: 0; background-color: rgba(0,0,0,.7);">
-      <div class="container">
-        <div class="col-md-6">
-          <span class="text-uppercase" style="color: #ffffff; font-size: 1.2rem; display: block; margin-bottom: 15px;">It Risk Advisory</span>
-          <!-- on small screens remove display-4 -->
-          <p style="color: #bbb; font-size: 14px; line-height: 1.6;">We aim to unleash the power of technology and transformation through our new storefront offerings that help us address our client needs and market demands by building competencies and capabilities as a tech-led practice.</p>
-          <div class="hero-btn">
-            <!-- hover background-color: white; color: black; -->
-            <a href="contact.html" class="btn px-5 py-3 text-white mt-3 mt-sm-0" style="border-radius: 30px;">Get Started</a>
-          </div>
-        </div>
-        
-        
-        </div>
-      </div>
+<!-- ======= New BakerTilly Style Hero Slider ======= -->
+<section class="bt-hero">
+
+  <div class="bt-slide active">
+    <img src="assets/img/slide1.jpeg" alt="">
+    <div class="bt-overlay"></div>
+
+    <div class="bt-content container">
+      <div class="line"></div>
+      <h1>Commercial Real Estate Market Report</h1>
+      <p>Equity and real estate markets are showing strength despite economic uncertainty and elevated inflation. 
+         Commercial real estate activity is rising, driven by rate cuts and limited new development.</p>
+
+      <a href="#" class="bt-btn">Explore Report →</a>
     </div>
   </div>
+
+  <div class="bt-slide">
+    <img src="assets/img/slide2.jpeg" alt="">
+    <div class="bt-overlay"></div>
+
+    <div class="bt-content container">
+      <div class="line"></div>
+      <h1>Cybersecurity Advisory & Assessment</h1>
+      <p>Strengthen your organization with proactive security strategies designed to protect your digital landscape.</p>
+
+      <a href="#" class="bt-btn">Learn More →</a>
+    </div>
+  </div>
+
+  <div class="bt-slide">
+    <img src="assets/img/slide3.jpeg" alt="">
+    <div class="bt-overlay"></div>
+
+    <div class="bt-content container">
+      <div class="line"></div>
+      <h1>Enterprise Risk Management</h1>
+      <p>Identify, evaluate, and mitigate risk with comprehensive and scalable ERM solutions.</p>
+
+      <a href="#" class="bt-btn">View Solutions →</a>
+    </div>
+  </div>
+
+  <!-- Arrows -->
+  <div class="bt-arrows">
+    <span class="arrow prev" onclick="bt_changeSlide(-1)">&#10094;</span>
+    <span class="arrow next" onclick="bt_changeSlide(1)">&#10095;</span>
+  </div>
+
+</section>
+<!-- ======= End Hero Slider ======= -->
+
        
  
   <!-- End Hero -->
@@ -924,6 +958,22 @@ Unyielding integrity in everything we do -->
       </div>
     </div>
   </section>
+  <script>
+let bt_index = 0;
+let bt_slides = document.querySelectorAll(".bt-slide");
+
+function bt_changeSlide(dir) {
+  bt_slides[bt_index].classList.remove("active");
+
+  bt_index = (bt_index + dir + bt_slides.length) % bt_slides.length;
+
+  bt_slides[bt_index].classList.add("active");
+}
+
+// Auto slide
+setInterval(() => bt_changeSlide(1), 6000);
+</script>
+
 </body>
 
 
